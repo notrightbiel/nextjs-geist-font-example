@@ -1,0 +1,388 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    background-color: #f5f5dc;
+    color: #2c2c2c;
+    line-height: 1.6;
+    min-height: 100vh;
+    background-image: 
+        radial-gradient(circle at 25% 25%, #ffeaa7 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, #fab1a0 0%, transparent 50%);
+    background-attachment: fixed;
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-bottom: 3px dashed #d63031;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #d63031;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #636e72;
+    font-style: italic;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Schedule Grid */
+.schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+/* Day Cards */
+.day {
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px dotted #74b9ff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 
+        4px 4px 0px #ddd,
+        8px 8px 0px #ccc;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    min-height: 200px;
+}
+
+.day:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        6px 6px 0px #ddd,
+        12px 12px 0px #ccc;
+}
+
+.day h2 {
+    color: #0984e3;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    border-bottom: 2px solid #74b9ff;
+    padding-bottom: 0.5rem;
+}
+
+/* Commitments List */
+.commitments-list {
+    list-style: none;
+    min-height: 100px;
+}
+
+.commitments-list li {
+    background: #fdcb6e;
+    margin: 0.5rem 0;
+    padding: 0.8rem;
+    border-radius: 4px;
+    border-left: 4px solid #e17055;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+}
+
+.commitments-list li:hover {
+    transform: translateX(4px);
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.commitment-text {
+    flex: 1;
+    font-weight: bold;
+}
+
+.remove-btn {
+    background: #d63031;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    margin-left: 0.5rem;
+}
+
+.remove-btn:hover {
+    background: #a71e1e;
+    transform: scale(1.1);
+}
+
+/* Add Commitment Section */
+.add-commitment-section {
+    background: rgba(255, 255, 255, 0.95);
+    border: 3px solid #00b894;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.add-commitment-section h3 {
+    color: #00b894;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Form Styles */
+#addCommitmentForm {
+    display: grid;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #2d3436;
+}
+
+select, input[type="text"] {
+    padding: 0.8rem;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    background: #fff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+select:focus, input[type="text"]:focus {
+    outline: none;
+    border-color: #74b9ff;
+    box-shadow: 0 0 0 3px rgba(116, 185, 255, 0.2);
+}
+
+.add-btn {
+    background: #00b894;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 6px;
+    font-family: 'Courier New', monospace;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.add-btn:hover {
+    background: #00a085;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.add-btn:active {
+    transform: translateY(0);
+}
+
+/* Error Message */
+.error-message {
+    color: #d63031;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    background: rgba(214, 48, 49, 0.1);
+    border-radius: 4px;
+    display: none;
+}
+
+.error-message.show {
+    display: block;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: #636e72;
+    font-style: italic;
+    background: rgba(255, 255, 255, 0.8);
+    border-top: 2px dashed #ddd;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .schedule-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .day {
+        padding: 1rem;
+        box-shadow: 2px 2px 0px #ddd, 4px 4px 0px #ccc;
+    }
+    
+    .day:hover {
+        box-shadow: 3px 3px 0px #ddd, 6px 6px 0px #ccc;
+    }
+    
+    #addCommitmentForm {
+        gap: 0.8rem;
+    }
+    
+    .add-commitment-section {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 0.5rem;
+    }
+    
+    header {
+        padding: 1.5rem 0.5rem;
+    }
+    
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .day {
+        padding: 0.8rem;
+    }
+    
+    .commitments-list li {
+        padding: 0.6rem;
+        font-size: 0.9rem;
+    }
+    
+    .add-commitment-section {
+        padding: 1rem;
+    }
+}
+
+/* Available Hours Section */
+.available-hours-section {
+    background: rgba(255, 255, 255, 0.95);
+    border: 3px solid #6c5ce7;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.available-hours-section h3 {
+    color: #6c5ce7;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.available-hours-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.day-available {
+    background: rgba(108, 92, 231, 0.1);
+    border: 2px solid #6c5ce7;
+    border-radius: 8px;
+    padding: 1rem;
+    min-height: 120px;
+}
+
+.day-available h4 {
+    color: #6c5ce7;
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+    text-align: center;
+    border-bottom: 1px solid #6c5ce7;
+    padding-bottom: 0.5rem;
+}
+
+.available-slots {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.available-slot {
+    background: #a29bfe;
+    color: white;
+    padding: 0.4rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.available-slot.unavailable {
+    background: #ddd;
+    color: #666;
+    text-decoration: line-through;
+}
+
+/* Password Protection Styles */
+.password-protected {
+    position: relative;
+}
+
+.password-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    border-radius: 4px;
+    z-index: 10;
+}
+
+/* Animation for new commitments */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.commitments-list li.new-commitment {
+    animation: slideIn 0.3s ease-out;
+}
